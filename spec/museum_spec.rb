@@ -18,4 +18,14 @@ RSpec.describe Museum do
       expect(dmns.exhibits).to eq([])
     end
   end
+
+  describe '#add_exhibit(exhibit)' do
+    it 'can add an exhibit to the @exhibits array' do
+      dmns.add_exhibit(gems_and_minerals)
+      dmns.add_exhibit(dead_sea_scrolls)
+      dmns.add_exhibit(imax)
+
+      expect(dmns.exhibits).to eq([gems_and_minerals, dead_sea_scrolls, imax])
+    end
+  end
 end
